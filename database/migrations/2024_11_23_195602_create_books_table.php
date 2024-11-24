@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->foreignId('member_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('borrowed_by')->nullable()->constrained('members')->onDelete('set null');
             $table->timestamps();
         });
     }

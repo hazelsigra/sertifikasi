@@ -12,11 +12,6 @@ class Member extends Model
 
     protected $fillable = ['name', 'phone', 'address'];
 
-    public function books()
-    {
-        return $this->hasMany(Book::class);
-    }
-
     public function borrowedBooks()
     {
         return $this->hasMany(Book::class, 'borrowed_by');
